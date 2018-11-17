@@ -17,3 +17,9 @@ invalid_input:
   li $v0, 4
   syscall
   j exit
+  
+long_input:
+  la $a0, tooLong
+  li $v0, 4
+  syscall
+  j exit
