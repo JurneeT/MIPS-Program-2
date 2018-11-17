@@ -71,3 +71,5 @@ check_validity:
 	bne $t6, $zero, step_char_forward
         slti $t6, $t5, 65                 # if char < ascii(65),  input invalid;   ascii(97) = A
 	bne $t6, $zero, invalid_input
+        slti $t6, $t5, 89                 # if char < ascii(88),  input is valid;  ascii(89) = Y
+	bne $t6, $zero, step_char_forward
