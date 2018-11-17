@@ -114,3 +114,10 @@ base_35_upper_conv:
 
 base_35_lower_conv:
 	addi $s4, $s4, -87
+	
+serialize_result:
+	beq $s0, $s3, first_digit #35^3
+	beq $s0, $s2, second_digit #35^2
+	beq $s0, $s1, third_digit #35^1
+	beq $s0, $s5, fourth_digit #35^0
+
