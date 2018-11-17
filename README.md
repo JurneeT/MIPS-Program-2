@@ -36,3 +36,7 @@ del_left_pad:
 	beq $t8, $t9, del_first_char
 	move $t9, $a0
 	j input_len
+	
+del_first_char:
+	addi $a0, $a0, 1
+	j del_left_pad
