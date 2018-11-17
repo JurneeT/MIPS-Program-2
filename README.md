@@ -29,3 +29,10 @@ main:
   la $a0, userInput
   li $a1, 100
   syscall
+
+del_left_pad:
+	li $t8, 32 # space
+	lb $t9, 0($a0)
+	beq $t8, $t9, del_first_char
+	move $t9, $a0
+	j input_len
