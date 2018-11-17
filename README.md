@@ -61,7 +61,7 @@ after_len_found:
 	move $a0, $t4
 	j check_validity
 	
-heck_validity:
+check_validity:
 	lb $t5, 0($a0)
 	beqz $t5, prepare_for_conversion
 	beq $t5, $t1, prepare_for_conversion
@@ -69,3 +69,5 @@ heck_validity:
         bne $t6, $zero, invalid_input
 	slti $t6, $t5, 58                 # if char < ascii(58),  input is valid;  ascii(58) = 9
 	bne $t6, $zero, step_char_forward
+        slti $t6, $t5, 65                 # if char < ascii(65),  input invalid;   ascii(97) = A
+	bne $t6, $zero, invalid_input
