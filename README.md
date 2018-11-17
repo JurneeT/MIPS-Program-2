@@ -111,3 +111,6 @@ base_convert_input:
 base_35_upper_conv:
 	addi $s4, $s4, -54
 	j serialize_result
+
+base_35_lower_conv:
+	addi $s4, $s4, -87
