@@ -23,3 +23,9 @@ long_input:
   li $v0, 4
   syscall
   j exit
+
+main:
+  li $v0, 8
+  la $a0, userInput
+  li $a1, 100
+  syscall
