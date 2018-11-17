@@ -157,3 +157,7 @@ print_result:
 	li $v0, 1
 	move $a0, $t7
 	syscall
+
+exit:
+ li $v0, 10
+ syscall
