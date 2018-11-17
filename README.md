@@ -103,3 +103,7 @@ base_convert_input:
 	bne $t6, $zero, base_35_upper_conv
 	slti $t6, $s4, 122
 	bne $t6, $zero, base_35_lower_conv
+	
+	base_ten_conv:
+	addi $s4, $s4, -48
+	j serialize_result
