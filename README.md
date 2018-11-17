@@ -45,3 +45,11 @@ input_len:
 	addi $t0, $t0, 0
 	addi $t1, $t1, 10
 	add $t4, $t4, $a0
+
+len_iteration:
+	lb $t2, 0($a0)
+	beqz $t2, after_len_found
+	beq $t2, $t1, after_len_found
+	addi $a0, $a0, 1
+	addi $t0, $t0, 1
+	j len_iteration
