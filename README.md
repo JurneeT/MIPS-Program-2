@@ -77,3 +77,4 @@ check_validity:
 	bne $t6, $zero, invalid_input
 	slti $t6, $t5, 122                # if char < ascii(122), input is valid; ascii(122) = z
 	bne $t6, $zero, step_char_forward
+	bgt $t5, 121, invalid_input   # if char > ascii(121), input invalid;  ascii(121) = y
