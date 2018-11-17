@@ -66,3 +66,6 @@ heck_validity:
 	beqz $t5, prepare_for_conversion
 	beq $t5, $t1, prepare_for_conversion
 	slti $t6, $t5, 48                 # if char < ascii(48),  input invalid;   ascii(48) = 0
+        bne $t6, $zero, invalid_input
+	slti $t6, $t5, 58                 # if char < ascii(58),  input is valid;  ascii(58) = 9
+	bne $t6, $zero, step_char_forward
