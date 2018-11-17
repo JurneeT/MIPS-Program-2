@@ -120,4 +120,12 @@ serialize_result:
 	beq $s0, $s2, second_digit #35^2
 	beq $s0, $s1, third_digit #35^1
 	beq $s0, $s5, fourth_digit #35^0
+	
+first_digit:
+	li $s6, 42875
+	mult $s4, $s6
+	mflo $s7
+	add $t7, $t7, $s7
+	addi $s0, $s0, -1
+	addi $a0, $a0, 1
 
