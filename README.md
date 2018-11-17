@@ -53,3 +53,10 @@ len_iteration:
 	addi $a0, $a0, 1
 	addi $t0, $t0, 1
 	j len_iteration
+	
+after_len_found:
+	beqz $t0, empty_input
+	slti $t3, $t0, 5
+	beqz $t3, long_input
+	move $a0, $t4
+	j check_validity
